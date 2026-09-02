@@ -91,14 +91,17 @@ module.exports = {
       },
       "next": null
     },
-    // linux rocm (amd)
+    // linux rocm (amd) — gfx1151 Strix Halo TheRock nightlies (not pytorch.org rocm6.x)
     {
       "when": "{{platform === 'linux' && gpu === 'amd'}}",
       "method": "shell.run",
       "params": {
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
-        "message": "uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm6.2.4"
+        "message": [
+          "uv pip uninstall -y torch torchvision torchaudio",
+          "uv pip install --prerelease allow --index-url https://rocm.nightlies.amd.com/v2/gfx1151/ torch torchvision torchaudio --force-reinstall"
+        ]
       },
       "next": null
     },

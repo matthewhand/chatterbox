@@ -5,7 +5,12 @@ module.exports = {
       method: "shell.run",
       params: {
         venv: "env",                // Edit this to customize the venv folder path
-        env: { },                   // Edit this to customize environment variables (see documentation)
+        env: {
+          HIP_VISIBLE_DEVICES: "0",
+          HSA_OVERRIDE_GFX_VERSION: "11.5.1",
+          PYTORCH_HIP_ALLOC_CONF: "expandable_segments:True",
+          ROC_ENABLE_PRE_VEGA: "1"
+        },
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
           "python gradio_vc_app.py",    // Edit with your custom commands
