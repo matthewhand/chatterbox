@@ -11,7 +11,9 @@
 
 This is a **Pinokio launcher** fork. The model repo under `app/` is still cloned from its original project.
 
----# Chatterbox
+---
+
+# Chatterbox
 
 A pinokio script for https://github.com/resemble-ai/chatterbox.git
 
