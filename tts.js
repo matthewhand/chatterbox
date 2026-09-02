@@ -10,7 +10,7 @@ module.exports = {
           HSA_OVERRIDE_GFX_VERSION: "11.5.1",
           PYTORCH_HIP_ALLOC_CONF: "expandable_segments:True",
           ROC_ENABLE_PRE_VEGA: "1"
-        },
+        },                   // Edit this to customize environment variables (see documentation)
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
           "python gradio_tts_app.py",    // Edit with your custom commands
