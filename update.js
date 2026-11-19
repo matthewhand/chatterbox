@@ -10,5 +10,12 @@ module.exports = {
       path: "app",
       message: "git pull"
     }
+  }, {
+    method: "shell.run",
+    params: {
+      path: "app",
+      venv: "env",
+      message: "uv pip install ../"
+    }
   }]
 }
